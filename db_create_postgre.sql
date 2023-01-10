@@ -1,16 +1,16 @@
---CREATE database sketching;
+-- CREATE database sketching;
 
 -- -----------------------------------------------------
 -- Table  sketching . layer 
 -- -----------------------------------------------------
-CREATE TABLE layer (
+CREATE TABLE public.layer (
   idlayer int NOT NULL,
   updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (idlayer));
 -- -----------------------------------------------------
 -- Table  sketching . entity 
 -- -----------------------------------------------------
-CREATE TABLE entity (
+CREATE TABLE public.entity (
    identity  int NOT NULL,
    layer  INT NOT NULL,
   PRIMARY KEY ( identity ),
@@ -20,7 +20,7 @@ CREATE TABLE entity (
 -- -----------------------------------------------------
 -- Table  sketching . param
 -- -----------------------------------------------------
-CREATE TABLE  param  (
+CREATE TABLE  public.param  (
    idparam  int NOT NULL,
    value  DOUBLE PRECISION NOT NULL,   
   PRIMARY KEY ( idparam ) );
@@ -29,7 +29,7 @@ CREATE TABLE  param  (
 -- -----------------------------------------------------
 -- Table  sketching . objtype 
 -- -----------------------------------------------------
-CREATE TABLE  objtype  (
+CREATE TABLE  public.objtype  (
    idobjtype  int NOT NULL,
    name  VARCHAR(45) NOT NULL,
    freedegree  INT NOT NULL,
@@ -39,7 +39,7 @@ CREATE TABLE  objtype  (
 -- -----------------------------------------------------
 -- Table  sketching . object 
 -- -----------------------------------------------------
-CREATE TABLE  object  (
+CREATE TABLE  public.object  (
    idobject  int NOT NULL,
    objtype  SMALLINT NOT NULL,
    idparent int,
@@ -53,7 +53,7 @@ CREATE TABLE  object  (
 -- -----------------------------------------------------
 -- Table  sketching . objparam
 -- -----------------------------------------------------
-CREATE TABLE  objparam  (
+CREATE TABLE  public.objparam  (
    idobject  int NOT NULL,
    idparam  int NOT NULL,   
    num  INT NULL,
@@ -65,7 +65,7 @@ CREATE TABLE  objparam  (
 -- -----------------------------------------------------
 -- Table  sketching . constrtype 
 -- -----------------------------------------------------
-CREATE TABLE  constrtype  (
+CREATE TABLE  public.constrtype  (
    idconstrtype  smallint NOT NULL,
    name  VARCHAR(45) not NULL,
    is_parametric  boolean not NULL,
@@ -75,7 +75,7 @@ CREATE TABLE  constrtype  (
 -- -----------------------------------------------------
 -- Table  sketching . constraint 
 -- -----------------------------------------------------
-CREATE TABLE  "constraint"  (
+CREATE TABLE  public."constraint"  (
    idconstraint  int NOT NULL,
    constrtype  SMALLint NOT NULL,
   PRIMARY KEY ( idconstraint ),
@@ -86,7 +86,7 @@ CREATE TABLE  "constraint"  (
 -- -----------------------------------------------------
 -- Table  sketching . constrinfo 
 -- -----------------------------------------------------
-CREATE TABLE  constrinfo  (
+CREATE TABLE  public.constrinfo  (
    idconstraint  int NOT NULL,
    idobject  int NOT NULL,
   PRIMARY KEY ( idconstraint ,  idobject ),
@@ -97,7 +97,7 @@ CREATE TABLE  constrinfo  (
 -- -----------------------------------------------------
 -- Table  sketching . constrparam 
 -- -----------------------------------------------------
-CREATE TABLE  constrparam  (
+CREATE TABLE  public.constrparam  (
    idconstraint  int NOT NULL,
    idparam  int NOT NULL,
   PRIMARY KEY ( idconstraint ,  idparam ),

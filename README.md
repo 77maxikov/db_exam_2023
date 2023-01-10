@@ -2,8 +2,9 @@
 
 1. db_diagram.svg - схема БД
 2. db_create_maria.sql - скрипт для создания таблиц и начального заполнения таблиц в MariaDB
-3. db_create_postgres.sql - скрипт для создания таблиц и начального заполнения таблиц в Postgres
-3. db_populate.sql - скрипт для заполнения таблиц
+3. db_create_postgre.sql - скрипт для создания таблиц и начального заполнения таблиц в PostgreSQL
+4. db_populate_maria.sql - скрипт для заполнения таблиц в MariaDB
+5. db_populate_postgre.sql - скрипт для заполнения таблиц в PostgreSQL
 
 
 ## Предметная область:
